@@ -1,0 +1,16 @@
+/* ==========================================================================
+   App shell — floating action button stack
+   ========================================================================== */
+
+/* ---------- Floating action buttons ---------- */
+
+.fab-stack {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  z-index: 999;
+}

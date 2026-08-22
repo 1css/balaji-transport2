@@ -1,0 +1,232 @@
+/* ==========================================================================
+   Global base — design tokens, resets, layout & reusable UI pieces
+   ========================================================================== */
+
+:root {
+  /* ---- Professional logistics palette: navy, steel & amber ---- */
+  --ink: #0f1b2d;
+  --ink-2: #16293f;
+  --bg: #f7f9fb;
+  --surface: #eef2f6;
+  --white: #ffffff;
+
+  --violet: #1e40af;
+  --violet-light: #3b6bc9;
+  --violet-soft: #e7edf7;
+  --pink: #f97316;
+  --pink-light: #fb923c;
+  --pink-soft: #fff1e6;
+
+  --teal: #0f766e;
+  --teal-light: #14b8a6;
+  --teal-soft: #e6f7f5;
+  --amber: #f59e0b;
+  --amber-dark: #b45309;
+  --amber-soft: #fef3c7;
+  --indigo: #334155;
+
+  --text: #1a2332;
+  --muted: #5b6b7d;
+  --line: #dbe3ec;
+
+  --whatsapp: #25d366;
+
+  --grad-brand: linear-gradient(120deg, var(--violet) 0%, var(--violet-light) 100%);
+  --grad-warm: linear-gradient(120deg, var(--pink) 0%, var(--amber) 100%);
+  --grad-hero: linear-gradient(135deg, #0a1628 0%, #123057 42%, #1e40af 72%, #2f7bd1 100%);
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+/* .container-xl {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 10px;
+} */
+
+@media (max-width: 575px) {
+  .container-xl {
+    padding: 0 5px;
+  }
+}
+
+/* Override Bootstrap's .container-xl max-width breakpoints so it stays full width
+   (fixes large left/right gaps on 15.6" / ~1366-1536px wide screens) */
+@media (width >= 1200px) {
+  .container-xl {
+    max-width: none;
+  }
+}
+
+@media (width >= 1400px) {
+  .container-xl {
+    max-width: none;
+  }
+}
+
+/* ---------- Reusable pieces ---------- */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--violet);
+  font-weight: 600;
+  margin-bottom: 14px;
+  background: var(--violet-soft);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.eyebrow.on-dark {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--amber);
+}
+
+.eyebrow.amber {
+  background: var(--amber-soft);
+  color: #b5730d;
+}
+
+.eyebrow.pink {
+  background: var(--pink-soft);
+  color: var(--pink);
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.18;
+  margin-bottom: 14px;
+  font-weight: 650;
+}
+
+.section-title span {
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title.on-dark {
+  color: var(--white);
+}
+
+.section-lede {
+  color: var(--muted);
+  font-size: 1.02rem;
+  max-width: 640px;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+.section-pad {
+  padding: 25px 0;
+
+}
+
+@media (max-width: 991px) {
+  .section-pad {
+    padding: 25px 0;
+  }
+}
+
+.bg-surface {
+  background: linear-gradient(180deg, #f4f6f8 0%, var(--surface) 50%, #eef1f4 100%);
+}
+
+.bg-ink {
+  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-2) 100%);
+  color: var(--white);
+}
+
+.btn-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.94rem;
+  background: var(--grad-brand);
+  background-size: 160% 160%;
+  color: var(--white);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 26px rgba(30, 64, 175, 0.4);
+}
+
+.btn-brand:hover {
+  background-position: 100% 0;
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(249, 115, 22, 0.42);
+}
+
+.btn-outline-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.94rem;
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  padding: 13px 26px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline-brand:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--white);
+}

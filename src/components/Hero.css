@@ -1,0 +1,621 @@
+/* ==========================================================================
+   Hero + hero slider
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  /* background-image: var(--grad-hero), url("/background.png"); */
+  background-image: url("/Background2.png");
+  background-size: cover, cover;
+  background-position: center, center 65%;
+  background-blend-mode: multiply, normal;
+  color: var(--white);
+  overflow: hidden;
+  /* padding: 120px 0 110px; */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -180px;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  /* background: radial-gradient(circle, rgba(245, 158, 11, 0.45), transparent 70%); */
+  pointer-events: none;
+  filter: blur(6px);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -240px;
+  left: -180px;
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  /* background: radial-gradient(circle, rgba(20, 184, 166, 0.35), transparent 70%); */
+  pointer-events: none;
+  filter: blur(6px);
+}
+
+.hero-glow {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  /* background: radial-gradient(circle, rgba(249, 115, 22, 0.4), transparent 72%); */
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(4px);
+}
+
+.hero-kicker {
+  font-family: var(--font-display);
+  color: var(--amber);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: clamp(2.3rem, 4.8vw, 3.9rem);
+  color: var(--white);
+  line-height: 1.1;
+  margin: 18px 0 22px;
+  font-weight: 650;
+}
+
+.hero-title .accent {
+  background: black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-sub {
+  font-size: 1.08rem;
+  color: yellow;
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 34px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 0;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 26px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-stat {
+  flex: 1 1 140px;
+  padding-right: 20px;
+}
+
+.hero-stat .num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--amber);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.hero-stat .label {
+  font-size: 0.8rem;
+  color: #1de5ef;
+  margin-top: 6px;
+  font-weight: 800;
+}
+
+/* ---------- Hero slider ---------- */
+
+.hero-slider {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  margin: 0 -1px;
+}
+
+.hero-track {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: transform 0.65s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+.hero-slide {
+  position: relative;
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-height: 600px ;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Laptop screens (~992px–1440px): give the slider a taller, banner-style
+   height so full-bleed videos read well without cropping too tight. */
+@media (min-width: 992px) {
+  .hero-slide {
+    min-height: 620px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-slide {
+    min-height: 680px;
+  }
+}
+
+.hero-slide[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+/* Full-bleed slide background: video (muted/looped) or image fallback,
+   sized to the exact width/height of the slide, with a brand-tinted
+   overlay for text contrast. */
+.hero-slide-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-slide-bg-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-slide-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    120deg,
+    rgba(24, 11, 52, 0.92) 0%,
+    rgba(59, 21, 115, 0.86) 38%,
+    rgba(30, 64, 175, 0.55) 68%,
+    rgba(217, 79, 156, 0.4) 100%
+  ); */
+}
+
+.hero-slide > .container-xl {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.hero-slide-content {
+  max-width: 620px;
+}
+
+.hero-title-sm {
+  font-size: clamp(1.75rem, 3.6vw, 2.7rem);
+  margin: 16px 0 20px;
+}
+
+.hero-slide-center {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-sub-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.hero-cta-center {
+  justify-content: center;
+}
+
+/* Slide 2 — big stats */
+
+.hero-stats-big {
+  border-top: none;
+  margin-top: 36px;
+  padding-top: 0;
+  justify-content: center;
+  gap: 56px;
+}
+
+.hero-stats-big .hero-stat {
+  flex: 0 1 180px;
+  padding-right: 0;
+  text-align: center;
+}
+
+.hero-stats-big .hero-stat .num {
+  font-size: 2.6rem;
+}
+
+/* Slide 3 — branches */
+
+.hero-branches-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-branch-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  backdrop-filter: blur(6px);
+}
+
+.hero-branch-card .pin {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--grad-brand);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.hero-branch-card h3 {
+  font-size: 0.98rem;
+  font-weight: 650;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.hero-branch-card p {
+  font-size: 0.99rem;
+  color: #1c3cd9;
+  line-height: 1.55;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero-branch-card .phone {
+  font-family: var(--font-display);
+  color: var(--amber);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .hero-branches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-branches-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Slide 1 — intro pinned top-left */
+
+.hero-slide--intro {
+  align-items: flex-start;
+}
+
+.hero-slide-content--topleft {
+  padding-top: 64px;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .hero-slide-content--topleft {
+    padding-top: 44px;
+  }
+}
+
+/* Shared split layout: content on the left, data panel pinned right */
+
+.hero-slide-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  width: 100%;
+}
+
+.hero-slide-split-left {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .hero-slide-split {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+}
+
+/* Big "25" numeral — no longer used beside slide content (moved to navbar),
+   kept minimal in case it's reused elsewhere. */
+
+.hero-slide-split-right {
+  flex: 1 1 520px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.hero-slide-split-right--solo {
+  flex: 1 1 100%;
+  max-width: 640px;
+  margin-left: auto;
+}
+
+.hero-slide-split-right .hero-title {
+  max-width: 560px;
+}
+
+@media (max-width: 900px) {
+  .hero-slide-split-right {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero-slide-split-right--solo {
+    max-width: none;
+    margin-left: 0;
+  }
+}
+
+/* Slide 2 — stats stacked in a column on the right */
+
+.hero-stats-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+  text-align: right;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding-top: 24px;
+  margin-top: 24px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.hero-stat-col-item {
+  min-width: 200px;
+}
+
+.hero-stat-col-item .num {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  color: var(--amber);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.hero-stat-col-item .label {
+  font-size: 0.82rem;
+  color: #1de5ef;
+  margin-top: 6px;
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .hero-stats-column {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 28px;
+    max-width: none;
+  }
+  .hero-stat-col-item {
+    min-width: 140px;
+  }
+}
+
+/* Slide 3 — branches, slow vertical marquee pinned right */
+
+.hero-slide-split--branches .hero-slide-split-left {
+  flex: 1 1 380px;
+}
+
+.hero-branches-marquee {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  height: 380px;
+  margin-top: 24px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+.hero-branches-track {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: hero-branches-scroll 22s linear infinite;
+}
+
+.hero-branches-marquee:hover .hero-branches-track {
+  animation-play-state: paused;
+}
+
+@keyframes hero-branches-scroll {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.hero-branches-marquee-fade {
+  display: none;
+}
+
+.hero-branches-marquee .hero-branch-card {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .hero-branches-marquee {
+    max-width: none;
+    height: 320px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-branches-marquee {
+    height: 280px;
+  }
+}
+
+/* Slide 4 — highlight */
+
+.hero-highlight-num {
+  font-family: var(--font-display);
+  font-size: clamp(3.1rem, 8.5vw, 5.6rem);
+  font-weight: 700;
+  color: var(--amber);
+  line-height: 1;
+  margin-top: 8px;
+}
+
+.hero-highlight-num span {
+  font-size: 0.34em;
+  margin-left: 6px;
+  color: var(--pink-light);
+  vertical-align: super;
+}
+
+/* Arrows + dots */
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  cursor: pointer;
+  z-index: 3;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-arrow:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.hero-arrow-prev {
+  left: 4px;
+}
+
+.hero-arrow-next {
+  right: 4px;
+}
+
+@media (max-width: 575px) {
+  .hero-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+}
+
+.hero-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  z-index: 3;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.hero-dot.active {
+  width: 24px;
+  border-radius: 999px;
+  background: var(--amber);
+}
+
+@media (max-width: 991px) {
+  .hero-slide {
+    min-height: 90vh;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-slide {
+    min-height: 100vh;
+    min-height: 100svh; /* accounts for mobile browser address-bar chrome */
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 90px 0 90px;
+  }
+}

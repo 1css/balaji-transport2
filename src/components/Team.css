@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Team
+   ========================================================================== */
+
+/* ---------- Team ---------- */
+
+.team-card {
+  text-align: center;
+}
+
+.team-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+}
+
+.team-card h3 {
+  font-size: 1.06rem;
+  margin-bottom: 4px;
+  font-weight: 650;
+}
+
+.team-card .role {
+  color: var(--pink);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}

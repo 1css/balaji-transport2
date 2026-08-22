@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+
+/* ---------- Navbar ---------- */
+
+.topbar {
+  background: var(--ink);
+  color: #9fb0c3;
+  font-size: 0.83rem;
+  padding: 8px 0;
+}
+
+.topbar a {
+  color: #c7d3de;
+}
+
+.topbar a:hover {
+  color: var(--amber);
+}
+
+.brand-navbar {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(11, 18, 32, 0.06);
+  padding: 14px 0;
+}
+
+.brand-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.brand-logo span {
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-logo small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.navbar-years-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 6px;
+  border-radius: 999px;
+  background: var(--amber-soft);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.navbar-years-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--grad-warm);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 14px rgba(249, 115, 22, 0.35);
+  flex-shrink: 0;
+}
+
+.navbar-years-txt {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--amber-dark);
+}
+
+@media (max-width: 1199px) {
+  .navbar-years-badge {
+    padding: 5px 12px 5px 5px;
+  }
+  .navbar-years-num {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+  }
+  .navbar-years-txt {
+    font-size: 0.6rem;
+  }
+}
+
+.nav-link-brand {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text) !important;
+  font-weight: 500;
+  margin: 0 2px;
+  padding: 8px 10px !important;
+  border-radius: 8px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-link-brand.active,
+.nav-link-brand:hover {
+  color: var(--violet) !important;
+  background: var(--violet-soft);
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    gap: 4px;
+    padding: 10px 0;
+  }
+}

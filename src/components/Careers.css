@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Careers — role cards & apply banner
+   ========================================================================== */
+
+/* Careers: clickable role cards (now link to a dedicated page) */
+
+.career-role-card {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  font-family: var(--font-body);
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.career-role-card:hover {
+  color: inherit;
+}
+
+.career-role-contact {
+  margin: 12px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--text-muted, #6b7280);
+}
+
+.career-role-contact i {
+  color: var(--violet);
+  margin-right: 6px;
+  width: 14px;
+  text-align: center;
+}
+
+.career-role-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--violet);
+  transition: gap 0.2s ease;
+}
+
+.career-role-card:hover .career-role-cta {
+  gap: 10px;
+}
+
+/* ---------- Careers ---------- */
+
+.career-apply-banner {
+  margin-top: 48px;
+  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-2) 100%);
+  border-radius: var(--radius-lg);
+  padding: 40px 44px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+}
+
+.career-apply-info h4 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.career-apply-info p {
+  color: #b7c3d4;
+  margin-bottom: 18px;
+  max-width: 420px;
+}
+
+.career-perks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.career-perks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #dfe4ee;
+}
+
+.career-perks li i {
+  color: var(--amber);
+  font-size: 1rem;
+}
+
+.career-apply-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 240px;
+}
+
+.career-whatsapp-btn {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.career-whatsapp-btn:hover {
+  border-color: var(--whatsapp);
+  background: rgba(37, 211, 102, 0.15);
+}
+
+.career-apply-note {
+  font-size: 0.82rem;
+  color: #9fb0c3;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.career-apply-note a {
+  color: #dfe4ee;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .career-apply-banner {
+    padding: 32px 26px;
+  }
+  .career-apply-actions {
+    align-items: stretch;
+    width: 100%;
+  }
+  .career-apply-actions .btn-brand,
+  .career-apply-actions .btn-outline-brand {
+    justify-content: center;
+  }
+}

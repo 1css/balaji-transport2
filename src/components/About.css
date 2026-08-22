@@ -1,0 +1,134 @@
+/* ==========================================================================
+   About
+   ========================================================================== */
+
+/* ---------- About: centered section heading ---------- */
+
+.about-heading {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 46px;
+}
+
+.about-heading .eyebrow {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-heading .section-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- About: media + copy ---------- */
+
+/* The row uses .align-items-stretch, so this column is exactly as tall as the
+   text column next to it. The image is then 90% of that height (10% shorter
+   than the paragraph block) and sits centred against it. */
+.about-media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.about-media img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(11, 18, 32, 0.14);
+}
+
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.about-subtitle {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.about-media .plate-tag {
+  position: absolute;
+  bottom: -20px;
+  left: 24px;
+  background: var(--white);
+  color: var(--ink);
+  padding: 16px 22px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  box-shadow: 0 16px 34px rgba(11, 18, 32, 0.16);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-media .plate-tag .num {
+  font-size: 1.7rem;
+  color: var(--violet);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.about-media .plate-tag .txt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  max-width: 90px;
+  line-height: 1.3;
+}
+
+/* ---------- About: cargo list ---------- */
+
+.cargo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 22px;
+  margin-top: 22px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.cargo-grid li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.cargo-grid li i {
+  color: var(--pink);
+  font-size: 1rem;
+}
+
+/* ---------- About: responsive ---------- */
+
+@media (max-width: 991px) {
+  .about-heading {
+    margin-bottom: 32px;
+  }
+
+  /* Stacked layout — no text column to match, so let the image size itself. */
+  .about-media {
+    height: auto;
+  }
+
+  .about-media img {
+    height: auto;
+    max-height: 420px;
+  }
+
+  .cargo-grid {
+    grid-template-columns: 1fr;
+  }
+}

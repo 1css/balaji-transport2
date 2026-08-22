@@ -1,0 +1,372 @@
+/* ==========================================================================
+   Safety — cards, guidelines video, banner & modal
+   ========================================================================== */
+
+/* ---------- Safety ---------- */
+
+.safety-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  height: 100%;
+  border: 1px solid var(--line);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.safety-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 44px rgba(11, 18, 32, 0.08);
+}
+
+.safety-card .icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--violet-soft);
+  color: var(--violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+
+.safety-card:nth-child(3n+2) .icon-badge {
+  background: var(--pink-soft);
+  color: var(--pink);
+}
+
+.safety-card:nth-child(3n+3) .icon-badge {
+  background: var(--amber-soft);
+  color: var(--amber-dark);
+}
+
+.safety-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  font-weight: 650;
+}
+
+.safety-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---------- Safety: guidelines video ---------- */
+
+.safety-video-wrap {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 44px;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.safety-video-copy .eyebrow {
+  margin-bottom: 14px;
+}
+
+.safety-video-copy h3 {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.safety-video-copy p {
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.safety-video-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+  box-shadow: 0 30px 60px rgba(24, 11, 52, 0.18);
+}
+
+.safety-video-media {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #000;
+}
+
+.safety-video-poster {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: var(--white);
+  background:
+    linear-gradient(160deg, rgba(24, 11, 52, 0.35) 0%, rgba(30, 64, 175, 0.55) 55%, rgba(249, 115, 22, 0.55) 100%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 26px);
+}
+
+.safety-video-glow {
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.22), transparent 60%);
+  pointer-events: none;
+}
+
+.safety-video-play {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.35s ease;
+  animation: safetyPlayPulse 2.4s ease-in-out infinite;
+}
+
+.safety-video-poster:hover .safety-video-play {
+  transform: scale(1.08);
+}
+
+.safety-video-play i {
+  margin-left: 4px;
+}
+
+.safety-video-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(24, 11, 52, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+@keyframes safetyPlayPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(255, 255, 255, 0);
+  }
+}
+
+@media (max-width: 991px) {
+  .safety-video-wrap {
+    grid-template-columns: 1fr;
+    padding: 28px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 575px) {
+  .safety-video-wrap {
+    padding: 20px;
+  }
+  .safety-video-play {
+    width: 68px;
+    height: 68px;
+    font-size: 1.6rem;
+  }
+}
+
+.safety-banner {
+  background: linear-gradient(120deg, var(--violet) 0%, var(--pink) 100%);
+  border-radius: var(--radius-lg);
+  padding: 34px 36px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.safety-banner .msg {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.safety-banner .msg i {
+  font-size: 2.4rem;
+}
+
+.safety-banner h4 {
+  color: var(--white);
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.safety-banner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.92rem;
+}
+
+/* ---------- Safety modal ---------- */
+
+.safety-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(21, 11, 44, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  padding: 20px;
+  animation: safetyFadeIn 0.2s ease;
+}
+
+.safety-modal-card {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px 32px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(21, 11, 44, 0.35);
+  animation: safetyPopIn 0.25s ease;
+}
+
+.safety-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--surface);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.safety-modal-close:hover {
+  background: var(--violet-soft);
+  color: var(--violet);
+}
+
+.safety-modal-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--grad-brand);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 auto 18px;
+  box-shadow: 0 12px 26px rgba(30, 64, 175, 0.35);
+}
+
+.safety-modal-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  font-weight: 650;
+}
+
+.safety-modal-sub {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 26px;
+}
+
+.safety-modal-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.safety-modal-row:last-child {
+  margin-bottom: 0;
+}
+
+.safety-modal-row:hover {
+  background: var(--violet-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(30, 64, 175, 0.16);
+}
+
+.safety-modal-row .icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 12px;
+  background: var(--grad-brand);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+}
+
+.safety-modal-row .label {
+  display: block;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.safety-modal-row .value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+@keyframes safetyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes safetyPopIn {
+  from { opacity: 0; transform: scale(0.94) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@media (max-width: 991px) {
+  .safety-banner {
+    padding: 26px 24px;
+  }
+}

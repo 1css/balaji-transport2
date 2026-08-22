@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16293f"/>
+      <stop offset="1" stop-color="#0f1b2d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="48" height="48" rx="11" fill="url(#bg)"/>
+
+  <!-- road line -->
+  <rect x="7" y="33.5" width="34" height="2" rx="1" fill="#f59e0b"/>
+
+  <!-- trailer body -->
+  <rect x="9" y="16" width="18" height="14" rx="1.5" fill="#ffffff"/>
+  <!-- trailer body panel lines -->
+  <rect x="12.4" y="16" width="1.4" height="14" fill="#c7ced8"/>
+  <rect x="17.4" y="16" width="1.4" height="14" fill="#c7ced8"/>
+  <rect x="22.4" y="16" width="1.4" height="14" fill="#c7ced8"/>
+
+  <!-- cab -->
+  <path d="M27 20h6.2c.6 0 1.2.3 1.5.8l3.2 4.6c.2.3.3.6.3 1V30c0 .6-.5 1-1 1H27V20z" fill="#f59e0b"/>
+  <!-- windshield -->
+  <path d="M29.2 22h3.6c.4 0 .7.2.9.5l1.9 2.7h-6.4V22z" fill="#dceaff"/>
+
+  <!-- wheels -->
+  <circle cx="16" cy="31.5" r="3.6" fill="#0f1b2d"/>
+  <circle cx="16" cy="31.5" r="1.5" fill="#ffffff"/>
+  <circle cx="33" cy="31.5" r="3.6" fill="#0f1b2d"/>
+  <circle cx="33" cy="31.5" r="1.5" fill="#ffffff"/>
+</svg>

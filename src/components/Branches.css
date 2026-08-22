@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Branches — route line signature
+   ========================================================================== */
+
+/* ---------- Branches: route line signature ---------- */
+
+.route-line {
+  position: relative;
+  margin-top: 56px;
+  padding-top: 4px;
+}
+
+.route-line .track {
+  position: absolute;
+  top: 11px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--line) 0,
+    var(--line) 10px,
+    transparent 10px,
+    transparent 18px
+  );
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .route-line .track {
+    display: block;
+  }
+}
+
+.branch-stop {
+  position: relative;
+  padding-top: 32px;
+}
+
+.branch-stop .pin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--grad-brand);
+  border: 3px solid var(--amber);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.35);
+}
+
+@media (min-width: 992px) {
+  .branch-stop .pin {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .branch-stop {
+    text-align: center;
+  }
+}
+
+.branch-stop h3 {
+  font-size: 1.02rem;
+  margin-bottom: 8px;
+  font-weight: 650;
+}
+
+.branch-stop p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.branch-stop .phone {
+  font-family: var(--font-display);
+  color: var(--indigo);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
