@@ -22,21 +22,16 @@
 
 /* ---------- About: media + copy ---------- */
 
-/* The row uses .align-items-stretch, so this column is exactly as tall as the
-   text column next to it. The image is then 90% of that height (10% shorter
-   than the paragraph block) and sits centred against it. */
 .about-media {
   position: relative;
-  display: flex;
-  align-items: center;
-  align-self: stretch;
   width: 100%;
   height: 100%;
+  display: flex;
 }
 
 .about-media img {
   width: 100%;
-  height: 90%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: var(--radius-lg);
@@ -118,12 +113,12 @@
     margin-bottom: 32px;
   }
 
-  /* Stacked layout — no text column to match, so let the image size itself. */
   .about-media {
     height: auto;
   }
 
   .about-media img {
+    width: 100%;
     height: auto;
     max-height: 420px;
   }
