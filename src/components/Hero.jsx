@@ -154,7 +154,7 @@ export default function Hero() {
                 <div className="hero-slide-split-right hero-slide-split-right--solo">
                   <div className="hero-kicker">Why Karnataka Trusts Us</div>
                   <h2 className="hero-title hero-title-sm">
-                    Two Decades Of <span className="accent">Consistent Delivery.</span>
+                    Three Decades Of <span className="accent">Consistent Delivery.</span>
                   </h2>
                   <div className="hero-stats-column">
                     {heroStats.map((stat) => (

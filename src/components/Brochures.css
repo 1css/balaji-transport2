@@ -1,0 +1,474 @@
+/* ==========================================================================
+   Brochures — downloadable PDF brochures with quick-view modal
+   ========================================================================== */
+
+.brochures-section {
+  position: relative;
+  overflow: hidden;
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+  background:
+    radial-gradient(900px 420px at 100% 0%, rgba(59, 107, 201, 0.35), transparent 60%),
+    radial-gradient(700px 380px at 0% 100%, rgba(249, 115, 22, 0.14), transparent 60%),
+    linear-gradient(160deg, #0a1628 0%, #0f1b2d 45%, #123057 100%);
+  color: var(--white);
+}
+
+/* subtle grid texture */
+.brochures-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+  pointer-events: none;
+}
+
+.brochures-section .section-title .brochure-accent {
+  background: var(--grad-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brochure-lede {
+  color: rgba(255, 255, 255, 0.72);
+  text-align: left;
+}
+
+.brochure-quick {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  backdrop-filter: blur(6px);
+}
+
+.brochure-quick > i {
+  font-size: 1.9rem;
+  color: var(--pink);
+}
+
+.brochure-quick strong,
+.brochure-quick span {
+  display: block;
+}
+
+.brochure-quick strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.brochure-quick span {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---------- Card ---------- */
+
+.brochure-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 44px rgba(3, 10, 24, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brochure-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(3, 10, 24, 0.5);
+}
+
+.brochure-card.is-featured {
+  outline: 2px solid var(--amber);
+  outline-offset: -2px;
+}
+
+.brochure-cover {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 26px 26px 0;
+  background: linear-gradient(160deg, var(--surface) 0%, #dfe7f1 100%);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.brochure-cover img {
+  display: block;
+  width: 72%;
+  max-width: 250px;
+  margin: 0 auto;
+  aspect-ratio: 210 / 297;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 -4px 30px rgba(15, 27, 45, 0.25), 10px 0 0 -4px rgba(15, 27, 45, 0.08);
+  transform: translateY(14%);
+  transition: transform 0.4s ease;
+}
+
+.brochure-card:hover .brochure-cover img {
+  transform: translateY(6%) rotate(-1deg);
+}
+
+.brochure-cover-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(15, 27, 45, 0.55);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.brochure-cover:hover .brochure-cover-overlay,
+.brochure-cover:focus-visible .brochure-cover-overlay {
+  opacity: 1;
+}
+
+.brochure-ribbon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--grad-warm);
+  color: #1a1206;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
+}
+
+.brochure-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 24px 24px;
+  border-top: 1px solid var(--line);
+  position: relative;
+  z-index: 1;
+  background: var(--white);
+}
+
+.brochure-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--violet);
+  background: var(--violet-soft);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.brochure-body h3 {
+  font-size: 1.18rem;
+  font-weight: 650;
+  margin-bottom: 8px;
+}
+
+.brochure-body p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.brochure-meta {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 12px 0 0;
+  margin: auto 0 18px;
+  border-top: 1px dashed var(--line);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.brochure-meta i {
+  color: var(--pink);
+  margin-right: 4px;
+}
+
+.brochure-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ---------- Buttons ---------- */
+
+.brochure-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.brochure-btn:hover {
+  transform: translateY(-2px);
+}
+
+.brochure-btn.solid {
+  background: var(--grad-brand);
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+}
+
+.brochure-btn.solid:hover {
+  color: var(--white);
+  box-shadow: 0 12px 26px rgba(30, 64, 175, 0.42);
+}
+
+.brochure-btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.brochure-btn.ghost:hover {
+  border-color: var(--violet);
+  color: var(--violet);
+}
+
+.brochure-btn.ghost-dark {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.brochure-btn.whatsapp {
+  background: var(--whatsapp);
+  color: #06331a;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.3);
+}
+
+.brochure-btn.whatsapp:hover {
+  color: #06331a;
+}
+
+.brochure-btn.sm {
+  padding: 8px 14px;
+  font-size: 0.84rem;
+}
+
+/* ---------- CTA strip ---------- */
+
+.brochure-cta {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px 26px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.brochure-cta-text {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brochure-cta-text > i {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  background: var(--grad-warm);
+  color: #1a1206;
+}
+
+.brochure-cta-text strong,
+.brochure-cta-text span {
+  display: block;
+}
+
+.brochure-cta-text strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.brochure-cta-text span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.9rem;
+}
+
+/* ---------- Modal viewer ---------- */
+
+.brochure-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(6, 12, 24, 0.78);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: brochureFade 0.2s ease;
+}
+
+.brochure-modal {
+  width: min(1000px, 100%);
+  height: min(90vh, 900px);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+  animation: brochureUp 0.25s ease;
+}
+
+.brochure-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px 14px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brochure-modal-head h4 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.brochure-modal-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 600;
+}
+
+.brochure-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brochure-modal-close {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--surface);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.brochure-modal-close:hover {
+  background: var(--line);
+}
+
+.brochure-frame {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #525659;
+}
+
+@keyframes brochureFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes brochureUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 991px) {
+  .brochures-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .brochure-cover img {
+    width: 60%;
+  }
+
+  .brochure-cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    padding: 18px;
+  }
+
+  .brochure-cta .brochure-btn {
+    width: 100%;
+  }
+
+  .brochure-modal-actions .brochure-btn span {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .brochures-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .brochure-quick {
+    width: 100%;
+  }
+
+  .brochure-body {
+    padding: 18px 18px 20px;
+  }
+
+  .brochure-cover {
+    padding: 20px 20px 0;
+  }
+}

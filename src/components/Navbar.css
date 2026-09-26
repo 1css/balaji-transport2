@@ -126,3 +126,15 @@
     padding: 10px 0;
   }
 }
+
+/* Small laptops (992–1199px): tighten menu so all links + badge fit */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .brand-navbar .nav-link-brand {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    font-size: 0.9rem;
+  }
+  .brand-navbar .navbar-years-badge {
+    display: none;
+  }
+}

@@ -17,11 +17,11 @@ export const heroSlidesMedia = {
   },
   stats: {
     video: "/video3.mp4",
-    image: "/Background2.png",
+    image: "/Background2.jpeg",
   },
   branches: {
     video: "/video2.mp4",
-    image: "/Background2.png",
+    image: "/Background2.jpeg",
   },
 };
 
@@ -56,7 +56,7 @@ export const services = [
   {
     id: 1,
     title: "Trailers Transportation",
-    image: "/Trailers Transportation.png",
+    image: "/truck.jpeg",
     description:
       "Efficient trailer services all over Karnataka, backed by a large, well-maintained fleet.",
     points: [
@@ -262,19 +262,19 @@ export const team = [
     id: 1,
     name: "G N Ramakrishna",
     role: "Founder",
-    image: "/founder-ramakrishna.jpg",
+    image: "/founder-ramakrishna.png",
   },
   {
     id: 2,
     name: "G R Balaji",
     role: "Co-Founder",
-    image: "director-balaji.jpg",
+    image: "director-balaji.png",
   },
   {
     id: 3,
     name: "G R Raghu",
     role: "Co-Founder",
-    image: "director-raghu.jpg",
+    image: "director-raghu.png",
   },
 ];
 
@@ -349,6 +349,7 @@ export const navLinks = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "services", label: "Services" },
+  { id: "brochures", label: "Brochures" },
   { id: "gallery", label: "Fleet" },
   { id: "safety", label: "Safety" },
   { id: "branches", label: "Branches" },
@@ -550,4 +551,46 @@ export const careerPerks = [
   { id: 1, icon: "bi-graph-up-arrow", text: "25+ years of stability and growth" },
   { id: 2, icon: "bi-geo-alt", text: "5 branches across Karnataka to grow with" },
   { id: 3, icon: "bi-people", text: "A safety-first, team-driven culture" },
+];
+
+// Downloadable brochures (PDFs live in /public/brochures). To replace a
+// brochure, drop a new PDF + cover image in that folder and update the paths.
+export const brochures = [
+  {
+    id: 1,
+    tag: "Company Profile",
+    icon: "bi-building",
+    title: "Balaji Transports Company Profile",
+    description:
+      "Our story, fleet, safety standards, branch network and the steel products we move across Karnataka.",
+    file: "/brochures/balaji-company-profile.pdf",
+    cover: "/brochures/balaji-company-profile-cover.jpg",
+    pages: 4,
+    size: "1.9 MB",
+    featured: true,
+  },
+  {
+    id: 2,
+    tag: "Service Brochure",
+    icon: "bi-truck",
+    title: "Trailers Transportation",
+    description:
+      "12 to 20-wheeler trailer options, typical cargo, how we work and how to book a vehicle.",
+    file: "/brochures/balaji-trailer-transportation.pdf",
+    cover: "/brochures/balaji-trailer-transportation-cover.jpg",
+    pages: 2,
+    size: "0.9 MB",
+  },
+  {
+    id: 3,
+    tag: "Service Brochure",
+    icon: "bi-gear-wide-connected",
+    title: "Balaji Crane Services",
+    description:
+      "Heavy cranes up to 100mt, hydra cranes, Kalmar reach stackers and forklifts for industrial lifting.",
+    file: "/brochures/balaji-crane-services.pdf",
+    cover: "/brochures/balaji-crane-services-cover.jpg",
+    pages: 2,
+    size: "0.9 MB",
+  },
 ];

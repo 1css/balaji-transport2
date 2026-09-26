@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Services from "../components/Services";
+import Brochures from "../components/Brochures";
 import FleetGallery from "../components/FleetGallery";
 import Safety from "../components/Safety";
 import Awards from "../components/Awards";
@@ -35,6 +36,7 @@ export default function HomePage() {
       <Hero />
       <About />
       <Services />
+      <Brochures />
       <FleetGallery />
       <Safety />
       {/* <Awards /> */}
