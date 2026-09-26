@@ -579,7 +579,7 @@ export const brochures = [
     file: "/brochures/balaji-trailer-transportation.pdf",
     cover: "/brochures/balaji-trailer-transportation-cover.jpg",
     pages: 2,
-    size: "0.9 MB",
+    size: "0.8 MB",
   },
   {
     id: 3,
