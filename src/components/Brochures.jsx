@@ -33,14 +33,14 @@ export default function Brochures() {
 
   return (
     <section id="brochures" className="section-pad brochures-section">
-      <div className="container-xl position-relative">
+      <div className="container-xl">
         <div className="row align-items-end g-4 mb-4 mb-lg-5">
           <div className="col-lg-7">
-            <div className="eyebrow on-dark">Brochures</div>
-            <h2 className="section-title on-dark">
-              Download Our <span className="brochure-accent">Brochures</span>
+            <div className="eyebrow">Brochures</div>
+            <h2 className="section-title">
+              Download Our <span>Brochures</span>
             </h2>
-            <p className="section-lede brochure-lede mb-0">
+            <p className="section-lede mb-0">
               Everything you need to know about our trailer fleet, crane
               services and branch network — ready to view, download and share
               with your team.
