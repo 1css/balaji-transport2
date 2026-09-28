@@ -50,17 +50,14 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.brochure-card:hover {
+.brochure-card:hover,
+.brochure-card:focus-within {
   transform: translateY(-8px);
-  box-shadow: 0 26px 46px rgba(11, 18, 32, 0.1);
-}
-
-.brochure-card.is-featured {
-  outline: 2px solid var(--amber);
-  outline-offset: -2px;
+  border-color: var(--violet);
+  box-shadow: 0 0 0 2px var(--violet), 0 26px 46px rgba(11, 18, 32, 0.12);
 }
 
 .brochure-cover {
@@ -68,28 +65,24 @@
   display: block;
   width: 100%;
   border: 0;
-  padding: 26px 26px 0;
-  background: linear-gradient(160deg, var(--surface) 0%, #dfe7f1 100%);
+  padding: 0;
+  background: var(--surface);
   cursor: pointer;
   overflow: hidden;
 }
 
 .brochure-cover img {
   display: block;
-  width: 72%;
-  max-width: 250px;
-  margin: 0 auto;
-  aspect-ratio: 210 / 297;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: top;
-  border-radius: 8px 8px 0 0;
-  box-shadow: 0 -4px 30px rgba(15, 27, 45, 0.25), 10px 0 0 -4px rgba(15, 27, 45, 0.08);
-  transform: translateY(14%);
-  transition: transform 0.4s ease;
+  object-position: top center;
+  transition: transform 0.5s ease;
 }
 
 .brochure-card:hover .brochure-cover img {
-  transform: translateY(6%) rotate(-1deg);
+  transform: scale(1.05);
 }
 
 .brochure-cover-overlay {
@@ -110,22 +103,6 @@
 .brochure-cover:hover .brochure-cover-overlay,
 .brochure-cover:focus-visible .brochure-cover-overlay {
   opacity: 1;
-}
-
-.brochure-ribbon {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: var(--grad-warm);
-  color: #1a1206;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
 }
 
 .brochure-body {
@@ -169,24 +146,8 @@
   margin-bottom: 16px;
 }
 
-.brochure-meta {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  padding: 12px 0 0;
-  margin: auto 0 18px;
-  border-top: 1px dashed var(--line);
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-
-.brochure-meta i {
-  color: var(--pink);
-  margin-right: 4px;
-}
-
 .brochure-actions {
+  margin-top: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
@@ -398,10 +359,6 @@
 /* ---------- Responsive ---------- */
 
 @media (max-width: 767px) {
-  .brochure-cover img {
-    width: 60%;
-  }
-
   .brochure-cta {
     flex-direction: column;
     align-items: stretch;
@@ -425,9 +382,5 @@
 
   .brochure-body {
     padding: 18px 18px 20px;
-  }
-
-  .brochure-cover {
-    padding: 20px 20px 0;
   }
 }

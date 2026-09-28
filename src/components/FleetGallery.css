@@ -88,6 +88,28 @@
   color: var(--white);
 }
 
+/* Rake & Siding tile: spans Column 2 + Column 3 (grid tracks 3–4) on desktop */
+.fleet-tile.rake-tile {
+  grid-column: 3 / span 2;
+  justify-content: center;
+  padding: 22px 26px;
+}
+
+.fleet-tile.icon-tile .caption {
+  width: 100%;
+}
+
+.fleet-tile.rake-tile .caption {
+  font-size: 1.05rem;
+}
+
+.fleet-tile.rake-tile .sub {
+  display: block;
+  width: 100%;
+  font-size: 0.85rem;
+  white-space: normal;
+}
+
 .fleet-tile.icon-tile .sub {
   font-size: 0.78rem;
   color: #9fb0c3;
@@ -110,8 +132,9 @@
     grid-row: span 2;
   }
 
-  .fleet-tile.wide {
-    grid-column: span 2;
+  .fleet-tile.wide,
+  .fleet-tile.rake-tile {
+    grid-column: 1 / -1;
   }
 }
 
@@ -130,7 +153,8 @@
 
   /* Remove desktop/tablet spans */
   .fleet-tile.tall,
-  .fleet-tile.wide {
+  .fleet-tile.wide,
+  .fleet-tile.rake-tile {
     grid-column: auto;
     grid-row: auto;
   }

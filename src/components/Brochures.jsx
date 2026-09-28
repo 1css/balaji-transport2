@@ -60,7 +60,7 @@ export default function Brochures() {
         <div className="row g-4">
           {brochures.map((b) => (
             <div className="col-md-6 col-lg-4" key={b.id}>
-              <article className={`brochure-card ${b.featured ? "is-featured" : ""}`}>
+              <article className="brochure-card">
                 <button
                   type="button"
                   className="brochure-cover"
@@ -71,7 +71,6 @@ export default function Brochures() {
                   <span className="brochure-cover-overlay">
                     <i className="bi bi-eye" /> Quick View
                   </span>
-                  {b.featured && <span className="brochure-ribbon">Most Popular</span>}
                 </button>
 
                 <div className="brochure-body">
@@ -81,18 +80,6 @@ export default function Brochures() {
                   </div>
                   <h3>{b.title}</h3>
                   <p>{b.description}</p>
-
-                  <ul className="brochure-meta">
-                    <li>
-                      <i className="bi bi-filetype-pdf" /> PDF
-                    </li>
-                    <li>
-                      <i className="bi bi-files" /> {b.pages} pages
-                    </li>
-                    <li>
-                      <i className="bi bi-hdd" /> {b.size}
-                    </li>
-                  </ul>
 
                   <div className="brochure-actions">
                     <button

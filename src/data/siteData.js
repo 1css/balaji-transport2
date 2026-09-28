@@ -137,7 +137,7 @@ export const fleetPhotos = [
   {
     id: 6,
     type: "icon",
-    size: "",
+    size: "wide rake-tile",
     icon: "bi-train-front",
     caption: "Rake & Siding Handling",
     sub: "SGWF Whitefield & Hosur (HSRA)",
@@ -567,7 +567,6 @@ export const brochures = [
     cover: "/brochures/balaji-company-profile-cover.jpg",
     pages: 4,
     size: "1.9 MB",
-    featured: true,
   },
   {
     id: 2,
