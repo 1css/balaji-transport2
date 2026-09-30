@@ -336,6 +336,7 @@ export const whatsappNumber = "919448275233"; // country code + number, no symbo
 export const contactInfo = {
   phone: "+91 - 9448275233",
   email: "balaji.branch@gmail.com",
+  gstin: "29AAWFB0395H1ZX",
   mapLink: "https://maps.app.goo.gl/ZmvYxHgAapJpM3in8",
   address:
     "Plot No. 14, Near Vinayaka Petrol Bunk, Sathyamangala Industrial Area, Antharasanahalli - 572106",

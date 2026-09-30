@@ -94,6 +94,21 @@
   flex-shrink: 0;
 }
 
+/* ---------- GSTIN ---------- */
+
+.footer-gstin {
+  color: #9fb0c3;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  word-break: break-all;
+}
+
+.footer-gstin strong {
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
 /* ---------- Social icons ---------- */
 
 .social-row {

@@ -89,6 +89,14 @@ export default function Footer() {
 
                 <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
               </li>
+
+              <li>
+                <i className="bi bi-receipt"></i>
+
+                <span className="footer-gstin">
+                  GSTIN: <strong>{contactInfo.gstin}</strong>
+                </span>
+              </li>
             </ul>
           </div>
         </div>
